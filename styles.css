@@ -144,7 +144,7 @@ p {
 
 .nav-menu {
     display: flex;
-    align-items: center;
+    align-items: right;
     gap: 4rem;
 }
 
