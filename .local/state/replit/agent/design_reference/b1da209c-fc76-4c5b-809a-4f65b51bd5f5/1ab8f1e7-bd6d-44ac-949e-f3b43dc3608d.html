@@ -1,0 +1,1034 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataInsights Pro - Advanced Marketing Analytics & Media Optimization Consulting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    popover: {
+                        DEFAULT: "var(--popover)",
+                        foreground: "var(--popover-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                }
+            }
+        }
+    };
+    </script>
+    <style>
+        :root {
+            --background: hsl(210 20% 98%);
+            --foreground: hsl(222 84% 4.9%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(222 84% 4.9%);
+            --popover: hsl(0 0% 100%);
+            --popover-foreground: hsl(222 84% 4.9%);
+            --primary: hsl(210 92% 45%);
+            --primary-foreground: hsl(210 40% 98%);
+            --secondary: hsl(222 47% 20%);
+            --secondary-foreground: hsl(210 40% 98%);
+            --muted: hsl(210 40% 96%);
+            --muted-foreground: hsl(215 16% 47%);
+            --accent: hsl(15 92% 60%);
+            --accent-foreground: hsl(210 40% 98%);
+            --destructive: hsl(0 84% 60%);
+            --destructive-foreground: hsl(210 40% 98%);
+            --border: hsl(214 32% 91%);
+            --input: hsl(214 32% 91%);
+            --ring: hsl(210 92% 45%);
+            --radius: 0.5rem;
+            --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: var(--font-sans);
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-background text-foreground">
+    <!-- Navigation -->
+    <!-- @COMPONENT: Navigation [fixed header with logo and menu items] -->
+    <nav class="fixed w-full top-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-xl font-bold text-primary">DataInsights Pro</h1>
+                    </div>
+                </div>
+                
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#services" class="text-muted-foreground hover:text-foreground transition-colors duration-200">Services</a>
+                        <a href="#integration" class="text-muted-foreground hover:text-foreground transition-colors duration-200">Integration</a>
+                        <a href="#case-studies" class="text-muted-foreground hover:text-foreground transition-colors duration-200">Case Studies</a>
+                        <a href="#about" class="text-muted-foreground hover:text-foreground transition-colors duration-200">About</a>
+                        <a href="#contact" class="bg-primary text-primary-foreground px-4 py-2 rounded-lg hover:bg-primary/90 transition-colors duration-200">Get Started</a>
+                    </div>
+                </div>
+                
+                <div class="md:hidden">
+                    <button type="button" class="text-muted-foreground hover:text-foreground">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- @END_COMPONENT: Navigation -->
+
+    <!-- Hero Section -->
+    <!-- @COMPONENT: HeroSection [main value proposition with CTA] -->
+    <section class="pt-24 pb-16 bg-gradient-to-br from-background to-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                        Transform Your Marketing with
+                        <span class="text-primary">Advanced Analytics</span>
+                    </h1>
+                    <p class="text-xl text-muted-foreground mb-8 leading-relaxed">
+                        Expert consulting in marketing analytics, media optimization, and causal inference modeling. 
+                        Help your technical teams unlock data-driven insights that drive measurable business growth.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button class="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                            Schedule Consultation
+                        </button>
+                        <button class="border border-border text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-muted transition-colors duration-200">
+                            View Case Studies
+                        </button>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">500+</div>
+                            <div class="text-sm text-muted-foreground">Campaigns Optimized</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">250%</div>
+                            <div class="text-sm text-muted-foreground">Avg. ROI Improvement</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">50+</div>
+                            <div class="text-sm text-muted-foreground">Enterprise Clients</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <!-- Analytics dashboard visualization with charts and graphs -->
+                    <div class="bg-card rounded-xl shadow-lg p-6 border border-border">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="font-semibold text-card-foreground">Marketing Performance Dashboard</h3>
+                            <div class="flex space-x-2">
+                                <div class="w-3 h-3 bg-accent rounded-full"></div>
+                                <div class="w-3 h-3 bg-muted rounded-full"></div>
+                                <div class="w-3 h-3 bg-muted rounded-full"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted-foreground">Conversion Rate</span>
+                                <span class="font-semibold text-primary">+24.5%</span>
+                            </div>
+                            <div class="w-full bg-muted rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted-foreground">Media Efficiency</span>
+                                <span class="font-semibold text-primary">+18.2%</span>
+                            </div>
+                            <div class="w-full bg-muted rounded-full h-2">
+                                <div class="bg-accent h-2 rounded-full" style="width: 68%"></div>
+                            </div>
+                            
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted-foreground">Attribution Accuracy</span>
+                                <span class="font-semibold text-primary">+31.7%</span>
+                            </div>
+                            <div class="w-full bg-muted rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HeroSection -->
+
+    <!-- Services Section -->
+    <!-- @COMPONENT: ServicesSection [detailed service offerings] -->
+    <section id="services" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Our Core Services</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Comprehensive consulting solutions that transform your marketing data into actionable insights
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Marketing Analytics -->
+                <div class="bg-card rounded-xl shadow-lg p-8 border border-border hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-chart-line text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-card-foreground mb-4">Marketing Analytics</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Advanced statistical modeling and data analysis to uncover hidden patterns in your marketing performance. 
+                        Custom attribution models, customer journey mapping, and predictive analytics.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            Multi-touch attribution modeling
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            Customer lifetime value analysis
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            Predictive churn modeling
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-primary mr-2"></i>
+                            Marketing mix modeling (MMM)
+                        </li>
+                    </ul>
+                    <button class="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Media Optimization -->
+                <div class="bg-card rounded-xl shadow-lg p-8 border border-border hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-accent text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-card-foreground mb-4">Media Optimization</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Systematic approach to optimize your media spend across channels. Real-time bidding strategies, 
+                        budget allocation optimization, and cross-channel performance measurement.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Automated bid optimization
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Cross-channel budget allocation
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Creative performance analysis
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-accent mr-2"></i>
+                            Incrementality testing
+                        </li>
+                    </ul>
+                    <button class="w-full bg-accent text-accent-foreground py-3 rounded-lg font-semibold hover:bg-accent/90 transition-colors duration-200">
+                        Learn More
+                    </button>
+                </div>
+                
+                <!-- Causal Inference -->
+                <div class="bg-card rounded-xl shadow-lg p-8 border border-border hover:shadow-xl transition-shadow duration-300">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-project-diagram text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-card-foreground mb-4">Causal Inference Modeling</h3>
+                    <p class="text-muted-foreground mb-6">
+                        Rigorous statistical methods to establish true causal relationships in your marketing data. 
+                        Experiment design, difference-in-differences analysis, and synthetic control methods.
+                    </p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Randomized controlled trials
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Quasi-experimental design
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Instrumental variables
+                        </li>
+                        <li class="flex items-center text-sm text-muted-foreground">
+                            <i class="fas fa-check text-secondary mr-2"></i>
+                            Propensity score matching
+                        </li>
+                    </ul>
+                    <button class="w-full bg-secondary text-secondary-foreground py-3 rounded-lg font-semibold hover:bg-secondary/90 transition-colors duration-200">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ServicesSection -->
+
+    <!-- Technical Integration Section -->
+    <!-- @COMPONENT: TechnicalIntegration [API docs and data connection guides] -->
+    <section id="integration" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Seamless Data Integration</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Connect your existing data infrastructure with our advanced analytics platform. 
+                    RESTful APIs, real-time data streaming, and enterprise-grade security.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-foreground mb-6">API Integration</h3>
+                    
+                    <div class="bg-card rounded-xl p-6 border border-border mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-semibold text-card-foreground">Authentication</h4>
+                            <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">POST</span>
+                        </div>
+                        <pre class="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
+<code class="text-muted-foreground">curl -X POST https://api.datainsights.pro/v1/auth \
+  -H "Content-Type: application/json" \
+  -d '{
+    "client_id": "your_client_id",
+    "client_secret": "your_client_secret"
+  }'</code></pre>
+                    </div>
+                    
+                    <div class="bg-card rounded-xl p-6 border border-border mb-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-semibold text-card-foreground">Data Upload</h4>
+                            <span class="text-xs bg-accent/10 text-accent px-2 py-1 rounded">POST</span>
+                        </div>
+                        <pre class="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
+<code class="text-muted-foreground">curl -X POST https://api.datainsights.pro/v1/data \
+  -H "Authorization: Bearer {token}" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "dataset": "marketing_campaigns",
+    "data": [...]
+  }'</code></pre>
+                    </div>
+                    
+                    <div class="bg-card rounded-xl p-6 border border-border">
+                        <div class="flex items-center justify-between mb-4">
+                            <h4 class="font-semibold text-card-foreground">Get Analytics</h4>
+                            <span class="text-xs bg-secondary/10 text-secondary px-2 py-1 rounded">GET</span>
+                        </div>
+                        <pre class="bg-muted p-4 rounded-lg text-sm overflow-x-auto">
+<code class="text-muted-foreground">curl -X GET https://api.datainsights.pro/v1/analytics/attribution \
+  -H "Authorization: Bearer {token}" \
+  -G -d "campaign_id=12345" \
+  -d "date_range=30d"</code></pre>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-foreground mb-6">Data Sources</h3>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-card rounded-xl p-6 border border-border">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-google text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground">Google Marketing Platform</h4>
+                                    <p class="text-sm text-muted-foreground">Google Ads, Analytics, DV360</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted-foreground">Integration Status</span>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Active</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-card rounded-xl p-6 border border-border">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fab fa-facebook text-accent"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground">Meta Business</h4>
+                                    <p class="text-sm text-muted-foreground">Facebook, Instagram Ads</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted-foreground">Integration Status</span>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Active</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-card rounded-xl p-6 border border-border">
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center mr-4">
+                                    <i class="fas fa-database text-secondary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-card-foreground">Custom Data Sources</h4>
+                                    <p class="text-sm text-muted-foreground">SQL, CSV, Real-time streams</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm text-muted-foreground">Integration Status</span>
+                                <span class="text-xs bg-primary/10 text-primary px-2 py-1 rounded">Available</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 bg-card rounded-xl p-6 border border-border">
+                        <h4 class="font-semibold text-card-foreground mb-4">Enterprise Features</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                SOC 2 Type II Compliance
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                End-to-end encryption
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Real-time data processing
+                            </li>
+                            <li class="flex items-center text-sm text-muted-foreground">
+                                <i class="fas fa-check text-primary mr-2"></i>
+                                Custom SLA agreements
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200 mr-4">
+                    Get API Documentation
+                </button>
+                <button class="border border-border text-foreground px-8 py-3 rounded-lg font-semibold hover:bg-muted transition-colors duration-200">
+                    Schedule Technical Demo
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: TechnicalIntegration -->
+
+    <!-- Case Studies Section -->
+    <!-- @COMPONENT: CaseStudies [client success stories and results] -->
+    <section id="case-studies" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Client Success Stories</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    See how leading companies have transformed their marketing performance with our data-driven solutions
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Case Study 1 -->
+                <div class="bg-card rounded-xl shadow-lg overflow-hidden border border-border">
+                    <!-- E-commerce company improving conversion rates through analytics -->
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Modern e-commerce analytics dashboard showing conversion metrics" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="text-sm text-accent font-semibold mb-2">E-COMMERCE</div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">250% ROI Improvement</h3>
+                        <p class="text-muted-foreground mb-4">
+                            Global fashion retailer optimized their attribution model and media mix, 
+                            resulting in 40% better conversion rates and 60% more efficient ad spend.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <div class="text-2xl font-bold text-primary">+40%</div>
+                                <div class="text-xs text-muted-foreground">Conversion Rate</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary">+60%</div>
+                                <div class="text-xs text-muted-foreground">Ad Efficiency</div>
+                            </div>
+                        </div>
+                        <button class="text-primary hover:text-primary/80 font-semibold text-sm">
+                            Read Full Case Study <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Case Study 2 -->
+                <div class="bg-card rounded-xl shadow-lg overflow-hidden border border-border">
+                    <!-- SaaS company using predictive analytics for customer retention -->
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Data visualization charts and graphs on computer screens showing predictive analytics" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="text-sm text-accent font-semibold mb-2">SAAS</div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">Reduced Churn by 35%</h3>
+                        <p class="text-muted-foreground mb-4">
+                            B2B SaaS platform implemented predictive churn modeling and personalized 
+                            retention campaigns, dramatically improving customer lifetime value.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <div class="text-2xl font-bold text-primary">-35%</div>
+                                <div class="text-xs text-muted-foreground">Customer Churn</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary">+125%</div>
+                                <div class="text-xs text-muted-foreground">LTV Increase</div>
+                            </div>
+                        </div>
+                        <button class="text-primary hover:text-primary/80 font-semibold text-sm">
+                            Read Full Case Study <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Case Study 3 -->
+                <div class="bg-card rounded-xl shadow-lg overflow-hidden border border-border">
+                    <!-- Financial services company optimizing cross-channel marketing -->
+                    <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" alt="Financial trading screens with market data and analytics charts" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="text-sm text-accent font-semibold mb-2">FINTECH</div>
+                        <h3 class="text-xl font-semibold text-card-foreground mb-3">3x Marketing Efficiency</h3>
+                        <p class="text-muted-foreground mb-4">
+                            Leading fintech company used causal inference modeling to optimize 
+                            cross-channel campaigns and improve customer acquisition costs.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <div class="text-2xl font-bold text-primary">-65%</div>
+                                <div class="text-xs text-muted-foreground">Acquisition Cost</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-primary">+180%</div>
+                                <div class="text-xs text-muted-foreground">Campaign ROI</div>
+                            </div>
+                        </div>
+                        <button class="text-primary hover:text-primary/80 font-semibold text-sm">
+                            Read Full Case Study <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-primary text-primary-foreground px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                    View All Case Studies
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CaseStudies -->
+
+    <!-- Testimonials Section -->
+    <!-- @COMPONENT: Testimonials [client testimonials and reviews] -->
+    <section class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Trusted by leading companies worldwide for advanced marketing analytics and optimization
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <div class="bg-card rounded-xl p-8 border border-border">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-semibold mr-4">
+                            SK
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground">Sarah Kim</div>
+                            <div class="text-sm text-muted-foreground">VP Marketing, TechCorp</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">
+                        "DataInsights Pro completely transformed our marketing attribution. We finally understand which 
+                        channels drive real value and can allocate budget with confidence. ROI improved by 200% in 6 months."
+                    </p>
+                    <div class="text-sm text-muted-foreground">
+                        <i class="fas fa-quote-left text-primary mr-2"></i>
+                        Marketing Analytics Implementation
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-xl p-8 border border-border">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-accent-foreground font-semibold mr-4">
+                            MR
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground">Michael Rodriguez</div>
+                            <div class="text-sm text-muted-foreground">Chief Data Officer, RetailPlus</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">
+                        "The causal inference modeling helped us understand the true impact of our campaigns. 
+                        No more guesswork - we have scientific rigor in our marketing decisions. Incredible expertise."
+                    </p>
+                    <div class="text-sm text-muted-foreground">
+                        <i class="fas fa-quote-left text-primary mr-2"></i>
+                        Causal Inference Modeling
+                    </div>
+                </div>
+                
+                <div class="bg-card rounded-xl p-8 border border-border">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-secondary-foreground font-semibold mr-4">
+                            JC
+                        </div>
+                        <div>
+                            <div class="font-semibold text-card-foreground">Jessica Chen</div>
+                            <div class="text-sm text-muted-foreground">Head of Growth, StartupX</div>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                        <i class="fas fa-star text-accent"></i>
+                    </div>
+                    <p class="text-muted-foreground mb-4">
+                        "Their media optimization strategies cut our acquisition costs by 40% while doubling conversion rates. 
+                        The team's technical depth and business acumen are unmatched."
+                    </p>
+                    <div class="text-sm text-muted-foreground">
+                        <i class="fas fa-quote-left text-primary mr-2"></i>
+                        Media Optimization Strategy
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- Pricing Section -->
+    <!-- @COMPONENT: PricingSection [service packages and pricing] -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Investment Packages</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Flexible consulting packages designed to scale with your business needs and deliver measurable ROI
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Starter Package -->
+                <div class="bg-card rounded-xl p-8 border border-border">
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-semibold text-card-foreground mb-2">Analytics Audit</h3>
+                        <div class="text-3xl font-bold text-primary mb-1">$25,000</div>
+                        <div class="text-sm text-muted-foreground">One-time assessment</div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Comprehensive analytics audit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Attribution model evaluation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Optimization recommendations</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Implementation roadmap</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">30-day email support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full border border-border text-foreground py-3 rounded-lg font-semibold hover:bg-muted transition-colors duration-200">
+                        Start Assessment
+                    </button>
+                </div>
+                
+                <!-- Professional Package -->
+                <div class="bg-card rounded-xl p-8 border-2 border-primary relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-semibold">
+                        Most Popular
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-semibold text-card-foreground mb-2">Full Implementation</h3>
+                        <div class="text-3xl font-bold text-primary mb-1">$75,000</div>
+                        <div class="text-sm text-muted-foreground">3-month engagement</div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Everything in Analytics Audit</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Custom attribution modeling</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Media optimization setup</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Data integration & APIs</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Team training & documentation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Ongoing optimization support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                        Get Started
+                    </button>
+                </div>
+                
+                <!-- Enterprise Package -->
+                <div class="bg-card rounded-xl p-8 border border-border">
+                    <div class="text-center mb-8">
+                        <h3 class="text-xl font-semibold text-card-foreground mb-2">Enterprise Partnership</h3>
+                        <div class="text-3xl font-bold text-primary mb-1">Custom</div>
+                        <div class="text-sm text-muted-foreground">Ongoing relationship</div>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Everything in Full Implementation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Advanced causal inference</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Real-time optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Dedicated analytics team</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">Custom SLA & guarantees</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-primary mr-3 mt-0.5"></i>
+                            <span class="text-muted-foreground">24/7 technical support</span>
+                        </li>
+                    </ul>
+                    
+                    <button class="w-full border border-border text-foreground py-3 rounded-lg font-semibold hover:bg-muted transition-colors duration-200">
+                        Contact Sales
+                    </button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-muted-foreground mb-4">
+                    All packages include detailed ROI tracking and performance guarantees
+                </p>
+                <button class="text-primary hover:text-primary/80 font-semibold">
+                    Compare All Features <i class="fas fa-arrow-right ml-1"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: PricingSection -->
+
+    <!-- Contact Section -->
+    <!-- @COMPONENT: ContactSection [contact form and business information] -->
+    <section id="contact" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-foreground mb-4">Get Started Today</h2>
+                <p class="text-xl text-muted-foreground max-w-3xl mx-auto">
+                    Ready to transform your marketing with advanced analytics? Let's discuss your specific needs and design a custom solution.
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold text-foreground mb-6">Schedule a Consultation</h3>
+                    
+                    <!-- @COMPONENT: ContactForm [service-specific inquiry form] -->
+                    <form class="space-y-6" data-implementation="Should include form validation and submission handling">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">First Name</label>
+                                <input type="text" data-bind="form.firstName" placeholder="Enter your first name" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors duration-200 bg-background text-foreground">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-foreground mb-2">Last Name</label>
+                                <input type="text" data-bind="form.lastName" placeholder="Enter your last name" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors duration-200 bg-background text-foreground">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Email Address</label>
+                            <input type="email" data-bind="form.email" placeholder="Enter your business email" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors duration-200 bg-background text-foreground">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Company</label>
+                            <input type="text" data-bind="form.company" placeholder="Enter your company name" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors duration-200 bg-background text-foreground">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Services Interested In</label>
+                            <div class="grid md:grid-cols-3 gap-4">
+                                <label class="flex items-center">
+                                    <input type="checkbox" data-bind="form.services" value="marketing-analytics" class="mr-2 text-primary">
+                                    <span class="text-sm text-muted-foreground">Marketing Analytics</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" data-bind="form.services" value="media-optimization" class="mr-2 text-primary">
+                                    <span class="text-sm text-muted-foreground">Media Optimization</span>
+                                </label>
+                                <label class="flex items-center">
+                                    <input type="checkbox" data-bind="form.services" value="causal-inference" class="mr-2 text-primary">
+                                    <span class="text-sm text-muted-foreground">Causal Inference</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Monthly Marketing Budget</label>
+                            <select data-bind="form.budget" class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors duration-200 bg-background text-foreground">
+                                <option value="">Select budget range</option>
+                                <option value="under-100k">Under $100K</option>
+                                <option value="100k-500k">$100K - $500K</option>
+                                <option value="500k-1m">$500K - $1M</option>
+                                <option value="1m-5m">$1M - $5M</option>
+                                <option value="over-5m">Over $5M</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-foreground mb-2">Project Details</label>
+                            <textarea data-bind="form.details" rows="4" placeholder="Tell us about your current challenges and goals..." class="w-full px-4 py-3 border border-input rounded-lg focus:ring-2 focus:ring-ring focus:border-transparent transition-colors duration-200 bg-background text-foreground resize-vertical"></textarea>
+                        </div>
+                        
+                        <button type="submit" data-event="click:handleSubmit" class="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-200">
+                            Schedule Consultation
+                        </button>
+                    </form>
+                    <!-- @END_COMPONENT: ContactForm -->
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold text-foreground mb-6">Why Choose DataInsights Pro?</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-graduation-cap text-primary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground mb-2">PhD-Level Expertise</h4>
+                                <p class="text-muted-foreground">Our team includes data scientists with advanced degrees from top universities and years of industry experience.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-rocket text-accent"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground mb-2">Proven Results</h4>
+                                <p class="text-muted-foreground">Average 250% ROI improvement across 500+ successful implementations for enterprise clients.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                                <i class="fas fa-shield-alt text-secondary"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-foreground mb-2">Enterprise Security</h4>
+                                <p class="text-muted-foreground">SOC 2 Type II compliance, end-to-end encryption, and custom SLA agreements for peace of mind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-card rounded-xl p-6 border border-border">
+                        <h4 class="font-semibold text-card-foreground mb-4">Contact Information</h4>
+                        <div class="space-y-3">
+                            <div class="flex items-center text-muted-foreground">
+                                <i class="fas fa-envelope mr-3 text-primary"></i>
+                                <span data-mock="true">hello@datainsightspro.com</span>
+                            </div>
+                            <div class="flex items-center text-muted-foreground">
+                                <i class="fas fa-phone mr-3 text-primary"></i>
+                                <span data-mock="true">+1 (555) 123-4567</span>
+                            </div>
+                            <div class="flex items-center text-muted-foreground">
+                                <i class="fas fa-map-marker-alt mr-3 text-primary"></i>
+                                <span data-mock="true">San Francisco, CA & New York, NY</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-border">
+                            <div class="text-sm text-muted-foreground mb-3">Response Time</div>
+                            <div class="text-foreground font-semibold">Within 2 business hours</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: ContactSection -->
+
+    <!-- Footer -->
+    <!-- @COMPONENT: Footer [site links and company information] -->
+    <footer class="bg-secondary text-secondary-foreground py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-4 gap-8">
+                <div class="lg:col-span-2">
+                    <h3 class="text-xl font-bold mb-4">DataInsights Pro</h3>
+                    <p class="text-secondary-foreground/80 mb-6 max-w-md">
+                        Advanced marketing analytics and optimization consulting for data-driven enterprises. 
+                        Transform your marketing performance with scientific rigor and proven methodologies.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors duration-200">
+                            <i class="fab fa-linkedin text-primary-foreground"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors duration-200">
+                            <i class="fab fa-twitter text-primary-foreground"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary rounded-lg flex items-center justify-center hover:bg-primary/90 transition-colors duration-200">
+                            <i class="fab fa-github text-primary-foreground"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">Marketing Analytics</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">Media Optimization</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">Causal Inference</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">Data Integration</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">About Us</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">Case Studies</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">Careers</a></li>
+                        <li><a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-secondary-foreground/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <div class="text-secondary-foreground/80 text-sm">
+                    <span data-mock="true">© 2024 DataInsights Pro. All rights reserved.</span>
+                </div>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground text-sm transition-colors duration-200">Privacy Policy</a>
+                    <a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground text-sm transition-colors duration-200">Terms of Service</a>
+                    <a href="#" class="text-secondary-foreground/80 hover:text-secondary-foreground text-sm transition-colors duration-200">API Documentation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // TODO: Implement smooth scrolling for navigation links
+        (function() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        })();
+
+        // TODO: Implement form validation and submission
+        // TODO: Add mobile menu toggle functionality
+        // TODO: Implement API integration for contact forms
+        // TODO: Add analytics tracking for user interactions
+    </script>
+</body>
+</html>
