@@ -145,7 +145,7 @@ p {
 .nav-menu {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
 }
 
 .nav-link {
