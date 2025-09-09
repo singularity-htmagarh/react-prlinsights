@@ -146,6 +146,8 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 4rem;
+    justify-content: flex-end; /* align items to right */
+    width: 100%; /* important, so it can span the container */
 }
 
 .nav-link {
