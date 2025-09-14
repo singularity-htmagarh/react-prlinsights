@@ -106,3 +106,124 @@
         grid-template-columns: 1fr;
     }
 }
+
+
+/* --- styles.css migrated to integration.css --- */
+
+:root {
+    --primary: hsl(11, 92%, 45%);
+    --primary-foreground: hsl(210, 40%, 98%);
+    --secondary: hsl(222, 47%, 20%);
+    --secondary-foreground: hsl(210, 40%, 98%);
+    --accent: hsl(15, 71%, 50%);
+    --accent-foreground: hsl(210, 40%, 98%);
+    --background: hsl(210, 20%, 98%);
+    --foreground: hsl(222, 84%, 4.9%);
+    --muted: hsl(210, 40%, 96%);
+    --muted-foreground: hsl(215, 16%, 47%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(222, 84%, 4.9%);
+    --border: hsl(214, 32%, 91%);
+    --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system;
+    --radius: 0.5rem;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--foreground);
+    background-color: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--muted-foreground);
+}
+
+.text-primary {
+    color: var(--primary);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.btn-primary:hover {
+    background-color: hsl(210, 92%, 40%);
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: var(--secondary-foreground);
+}
+
+.btn-accent {
+    background-color: var(--accent);
+    color: var(--accent-foreground);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--foreground);
+    border: 2px solid var(--border);
+}
+
+.btn-outline:hover {
+    background-color: var(--muted);
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+

@@ -21,8 +21,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Our Expert Services - PRL Insights & Partners</title>
 	<meta name="description" content="Comprehensive consulting solutions in marketing analytics, media optimization, and causal inference modeling. Transform your marketing data into actionable insights.">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="./services.css">
+    <link rel="stylesheet" href="../assets/style.css">
+    <link rel="stylesheet" href="services.css">
 	<link rel="icon" href="/assets/favicon.ico" type="/x-icon">
 </head>
 <body>
@@ -31,27 +31,8 @@
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
    
-	<!-- Navigation -->
-	<nav class="navbar">
-		<div class="container">
-			<div class="nav-header">
-				<a href="/" class="logo">PRL Insights & Partners</a>
-				<button class="nav-toggle" onclick="toggleMobileNav()">
-					<span></span>
-					<span></span>
-					<span></span>
-				</button>
-			</div>
-			<div class="nav-menu" id="navMenu">
-                <a href="/services/" class="nav-link">Services</a>
-                <a href="/integration/" class="nav-link">Integration</a>
-                <a href="/case-studies/" class="nav-link">Case Studies</a>
-                <a href="/featured-insights/" class="nav-link">Featured Insights</a>
-                <a href="/contact/" class="nav-link">Contact</a>
-                <a href="/contact/" class="btn btn-primary">Get Started</a>
-			</div>
-		</div>
-	</nav>
+    <!-- Navigation injected by assets/navbar.js -->
+    <script src="/assets/navbar.js"></script>
 
 	<!-- Hero Section -->
 	<section class="hero">
@@ -66,6 +47,7 @@
 	<!-- Marketing Analytics Service -->
     <section class="services">
         <div class="container">
+    <script src="/assets/footer.js"></script>
             <div class="service-detail">
                 <div class="service-detail-content">
                     <div class="service-header">
@@ -292,49 +274,8 @@
 	</section>
 
 	<!-- Footer -->
-	<footer class="footer">
-		<div class="container">
-			<div class="footer-content">
-				<div class="footer-section">
-					<h3>PRL Insights & Partners</h3>
-					<p>Advanced marketing analytics and optimization consulting for data-driven enterprises. Transform your marketing performance with scientific rigor and proven methodologies.</p>
-					<div class="social-links">
-						<a href="#" class="social-link">LinkedIn</a>
-						<a href="#" class="social-link">Twitter</a>
-						<a href="#" class="social-link">GitHub</a>
-					</div>
-				</div>
-				<div class="footer-section">
-					<h4>Services</h4>
-					<ul>
-						<li><a href="/services/">Marketing Analytics</a></li>
-						<li><a href="/services/">Media Optimization</a></li>
-						<li><a href="/services/">Causal Inference</a></li>
-						<li><a href="/integration/">Data Integration</a></li>
-					</ul>
-				</div>
-				<div class="footer-section">
-					<h4>Company</h4>
-					<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="/case-studies/">Case Studies</a></li>
-						<li><a href="#">Careers</a></li>
-						<li><a href="/contact/">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="footer-bottom">
-				<div class="copyright">
-					©2025 PRL Inights & Partners. All rights reserved.
-				</div>
-				<div class="footer-links">
-					<a href="#">Privacy Policy</a>
-					<a href="#">Terms of Service</a>
-					<a href="#">API Documentation</a>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<!-- Footer injected by assets/footer.js -->
+    <script src="/assets/footer.js"></script>
 
 	<script>
 		function toggleMobileNav() {
@@ -343,122 +284,6 @@
 		}
 	</script>
 
- <style>
-        .service-detail {
-            display: grid;
-            grid-template-columns: 1fr 350px;
-            gap: 3rem;
-            align-items: start;
-            margin-bottom: 4rem;
-        }
 
-        .service-detail:nth-child(even) {
-            grid-template-columns: 350px 1fr;
-        }
-
-        .service-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-header .service-icon {
-            margin-right: 1rem;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .feature-item h4 {
-            color: var(--foreground);
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-        }
-
-        .feature-item p {
-            font-size: 0.875rem;
-            margin: 0;
-        }
-
-        .process-card {
-            background-color: var(--card);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.5rem;
-            position: sticky;
-            top: 6rem;
-        }
-
-        .process-card h3 {
-            margin-bottom: 1.5rem;
-            color: var(--card-foreground);
-        }
-
-        .process-step {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .process-step:last-child {
-            margin-bottom: 0;
-        }
-
-        .step-number {
-            width: 2rem;
-            height: 2rem;
-            background-color: var(--primary);
-            color: var(--primary-foreground);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.875rem;
-            flex-shrink: 0;
-        }
-
-        .step-number.accent {
-            background-color: var(--accent);
-        }
-
-        .step-number.secondary {
-            background-color: var(--secondary);
-        }
-
-        .step-content h4 {
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            color: var(--card-foreground);
-        }
-
-        .step-content p {
-            font-size: 0.875rem;
-            margin: 0;
-            color: var(--muted-foreground);
-        }
-
-        @media (max-width: 768px) {
-            .service-detail,
-            .service-detail:nth-child(even) {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .process-card {
-                position: static;
-            }
-        }
-    </style>
 </body>
 </html>
