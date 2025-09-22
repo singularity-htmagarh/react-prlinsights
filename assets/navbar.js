@@ -1,4 +1,4 @@
-// Injects the navigation bar into the page
+// ...existing code...
 (function() {
   var navHtml = `\
 <nav class="navbar">

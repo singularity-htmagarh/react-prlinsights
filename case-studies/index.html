@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	  <!-- Tag Manager & Analytics -->
-        <script src="../assets/tag-manager.js"></script>
-
+	<!-- Tag Manager & Analytics -->
+    <script src="../assets/tag-manager.js"></script>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Client Success Stories - PRL Insights & Partners</title>
@@ -11,6 +10,9 @@
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/index.css">
     <link rel="icon" href="/assets/favicon.ico" type="/x-icon">
+
+    <!-- Case Studies Script -->
+    <script src="/case-studies/case-studies.js"></script>
 </head>
 
 <body>
@@ -23,11 +25,11 @@
     <!-- Navigation injected by assets/navbar.js -->
     <script src="/assets/navbar.js"></script>
 
-<!-- Main Content -->
-<main class="featured-main" style="max-width:1200px;margin:2rem auto;display:block;">
- 
+    <!-- Main Content -->
+    <main class="featured-main" style="max-width:1200px;margin:2rem auto;display:block;">
+    <script src="/assets/footer.js"></script>
 
-	<!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
             <script src="/assets/footer.js"></script>
@@ -38,12 +40,15 @@
         </div>
     </section>
 
-    <!-- Case Studies Grid -->
+    <!-- Case Studies Script -->
+    <script src="/case-studies/case-studies.js"></script>
+
+	<!-- Case Studies Grid -->
     <section class="case-studies">
         <div class="container">
-            <div class="case-studies-detailed">
+
+            <div class="case-study-detailed">
                 <!-- Case Study 1 -->
-                <div class="case-study-detailed">
                     <div class="case-study-hero">
                         <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400" alt="E-commerce analytics dashboard">
                         <div class="case-study-overlay">
@@ -52,8 +57,7 @@
                             <p class="case-subtitle">Global Fashion Retailer</p>
                         </div>
                     </div>
-                    <div class="case-study-content-detailed">
-                        <div class="case-study-main">
+                    <div class="case-study-main">
                             <div class="challenge-section">
                                 <h3>The Challenge</h3>
                                 <p>A global fashion retailer with $500M+ annual revenue was struggling with fragmented attribution across their multi-channel marketing campaigns. They had limited visibility into which touchpoints were driving actual conversions, leading to suboptimal budget allocation and missed growth opportunities.</p>
@@ -73,6 +77,7 @@
                             <p class="case-subtitle">B2B SaaS Platform</p>
                         </div>
                     </div>
+                    
                     <div class="case-study-content-detailed">
                         <div class="case-study-main">
                             <div class="challenge-section">
@@ -166,7 +171,7 @@
                 </div>
 
                 <!-- Case Study 3 -->
-                <div class="case-study-detailed">
+                <div class="case-study-content-detailed">
                     <div class="case-study-hero">
                         <img src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=400" alt="Fintech analytics dashboard">
                         <div class="case-study-overlay">
@@ -175,7 +180,7 @@
                             <p class="case-subtitle">Digital Banking Platform</p>
                         </div>
                     </div>
-                    <div class="case-study-content-detailed">
+                    
                         <div class="case-study-main">
                             <div class="challenge-section">
                                 <h3>The Challenge</h3>
@@ -264,12 +269,45 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
-
+    <style>
+      .case-studies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+      .case-study-card {
+        background: #f5f7fa;
+        border-radius: 12px;
+        padding: 2rem 1.5rem;
+        text-decoration: none;
+        color: #222;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        transition: box-shadow 0.2s, transform 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .case-study-card:hover {
+        box-shadow: 0 6px 24px rgba(26,115,232,0.12);
+        transform: translateY(-4px) scale(1.03);
+        color: #1a73e8;
+      }
+      .case-study-card h2 {
+        margin: 0 0 0.5rem 0;
+        font-size: 1.25rem;
+      }
+      .case-study-card p {
+        margin: 0;
+        font-size: 1rem;
+        color: #444;
+      }
+    </style>
+    
 	<!-- CTA Section -->
 	<section class="contact" style="padding: 3rem 0;">
 		<div class="container">

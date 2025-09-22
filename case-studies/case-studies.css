@@ -55,7 +55,7 @@
 @media (max-width: 768px) {
     .case-study-content-detailed {
         grid-template-columns: 1fr;
-        padding: 2rem;
+        padding: 1rem;
         gap: 2rem;
     }
 
