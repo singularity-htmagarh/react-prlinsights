@@ -19,8 +19,14 @@
             <a href="/case-studies/" class="nav-link">Case Studies</a>
             <a href="/featured-insights/" class="nav-link">Featured Insights</a>
             <a href="/contact/" class="nav-link">Contact</a>
-            <a href="/contact/" class="btn btn-primary">Get Started</a>
-           
+            <a href="/contact/" class="btn btn-primary">Get Demo</a>
+            <a href="/client-login/" class="nav-link" title="Client Login" style="display:inline-flex;align-items:center;justify-content:center;margin-right:0.5rem;padding:0.4rem 0.7rem;">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;">
+                    <circle cx="12" cy="8.5" r="4.5" stroke="#222"/>
+                    <path d="M4 20c0-3.3137 3.134-6 8-6s8 2.6863 8 6" stroke="#222"/>
+                </svg>
+            </a>
+            
         </div>
     </div>
 </nav>
