@@ -69,69 +69,9 @@
 	<!-- Contact Form Section -->
 	<section class="contact">
 		<div class="container">
-			<div class="contact-content">
-				<div class="contact-form-section">
-					<h2>Schedule a Consultation</h2>
-					<form class="contact-form" id="contactForm">
-						<div class="form-row">
-							<div class="form-group">
-								<label for="firstName">First Name *</label>
-								<input type="text" id="firstName" name="firstName" required>
-							</div>
-							<div class="form-group">
-								<label for="lastName">Last Name *</label>
-								<input type="text" id="lastName" name="lastName" required>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="email">Email Address *</label>
-							<input type="email" id="email" name="email" placeholder="your.email@company.com" required>
-						</div>
-						<div class="form-group">
-							<label for="company">Company *</label>
-							<input type="text" id="company" name="company" placeholder="Your Company Name" required>
-						</div>
-						<div class="form-group">
-							<label>Services Interested In *</label>
-							<div class="checkbox-group">
-								<label class="checkbox">
-									<input type="checkbox" name="services" value="marketing-analytics">
-									<span>Marketing Analytics</span>
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" name="services" value="media-optimization">
-									<span>Media Optimization</span>
-								</label>
-								<label class="checkbox">
-									<input type="checkbox" name="services" value="causal-inference">
-									<span>Causal Inference Modeling</span>
-								</label>
-							</div>
-						</div>
-						<div class="form-group">
-							<label for="budget">Monthly Marketing Budget *</label>
-							<select id="budget" name="budget" required>
-								<option value="">Select budget range</option>
-								<option value="under-100k">Under $100K</option>
-								<option value="100k-500k">$100K - $500K</option>
-								<option value="500k-1m">$500K - $1M</option>
-								<option value="1m-5m">$1M - $5M</option>
-								<option value="over-5m">Over $5M</option>
-							</select>
-						</div>
-						<div class="form-group">
-							<label for="details">Project Details *</label>
-							<textarea id="details" name="details" rows="5" placeholder="Tell us about your current challenges, goals, and what you're hoping to achieve with advanced marketing analytics..." required></textarea>
-						</div>
-						<button type="submit" class="btn btn-primary btn-full">Schedule Consultation</button>
-					</form>
-					<div id="thankYouMessage" style="display:none;">
-						<h3>Thank you for your inquiry!</h3>
-						<p>We'll get back to you within 2 business hours with next steps and a proposed meeting time.</p>
-					</div>
-				</div>
-				<div class="contact-info-section">
-					<h2>Why Choose DataInsights Pro?</h2>
+			<div class="contact-content" style="display:flex;flex-direction:row;gap:3rem;align-items:flex-start;">
+				<div class="contact-info-section" style="flex:1 1 0;min-width:320px;">
+					<h2>Why Choose PRL Insights & Partners</h2>
 					<div class="benefits">
 						<div class="benefit">
 							<div class="benefit-icon">🎓</div>
@@ -220,6 +160,9 @@
 						</div>
 					</div>
 				</div>
+				<div class="contact-form-section" id="contactFormContainer" style="flex:1 1 0;min-width:340px;"></div>
+			</div>
+				</div>
 			</div>
 		</div>
 	</section>
@@ -262,8 +205,12 @@
 
 	<!-- Footer -->
    <!-- Footer injected by assets/footer.js -->
-    <script src="/assets/footer.js"></script>
-	<script src="/contact/contact.js"></script>
+		<script src="/assets/footer.js"></script>
+		<script type="module">
+			import { renderContactFormSection } from './contact-form.js';
+			renderContactFormSection(document.getElementById('contactFormContainer'));
+		</script>
+		<script src="/contact/contact.js"></script>
 
 </body>
 </html>
