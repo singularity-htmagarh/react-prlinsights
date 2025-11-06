@@ -17,14 +17,14 @@
                 <span></span>
             </button>
         </div>
+        
         <div class="nav-menu" id="navMenu">
-            <a href="/services/" class="nav-link">Services</a>
-          <!-- <a href="/integration/" class="nav-link">Integration</a> -->
-            <a href="/case-studies/" class="nav-link">Case Studies</a>
-            <a href="/featured-insights/" class="nav-link">Insights</a>
-            <a href="/careers/" class="nav-link">Careers</a>
-            <a href="/contact/" class="nav-link">Contact</a>
-            <a href="/contact/" class="btn btn btn-outline btn-lg">Get Demo</a>
+            <a href="/services/" class="nav-link">SERVICES</a>
+            <a href="/case-studies/" class="nav-link">PRODUCTS</a>
+            <a href="/featured-insights/" class="nav-link">INSIGHTS</a>
+            <a href="/careers/" class="nav-link">CAREERS</a>
+            <a href="/contact/" class="nav-link">CONTACT</a>
+            <!-- <a href="/contact/" class="btn btn btn-outline btn-lg">Get Demo</a> -->
             <a href="/client-login/" class="nav-link" title="Client Login" style="display:inline-flex;align-items:center;justify-content:center;margin-right:0.5rem;padding:0.4rem 0.7rem;">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;">
                     <circle cx="12" cy="8.5" r="4.5" stroke="#222"/>

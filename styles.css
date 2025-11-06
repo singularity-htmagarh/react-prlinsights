@@ -31,6 +31,11 @@ body {
     background-color: var(--background);
 }
 
+/* Make body text slightly bolder for better legibility */
+body {
+    font-weight: 500;
+}
+
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -45,15 +50,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 3rem;
+    font-size: 2.4rem; /* smaller primary headings */
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2rem; /* smaller secondary headings */
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* slightly smaller tertiary headings */
 }
 
 p {
@@ -122,9 +127,10 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.95);
+    /* slightly darker/more opaque so links pop against it */
+    background-color: rgba(245, 245, 245, 0.98);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 1px solid rgba(220,220,220,0.8);
     z-index: 1000;
 }
 
@@ -153,11 +159,47 @@ p {
 .nav-link {
     color: var(--muted-foreground);
     text-decoration: none;
-    transition: color 0.2s;
+    display: inline-block;
+    font-weight: 600; /* slightly bolder */
+    font-size: 0.98rem;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    padding: 0.35rem 0.5rem;
+    border-radius: 6px;
+    position: relative;
+    transition: color 0.18s ease, transform 0.12s ease, background-color 0.15s ease;
 }
 
-.nav-link:hover {
+.nav-link::after {
+    /* subtle underline that animates like modern navs */
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -6px;
+    height: 2px;
+    width: 0;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: width 0.22s ease, opacity 0.18s ease;
+    opacity: 0;
+}
+
+.nav-link:hover,
+.nav-link:focus {
     color: var(--foreground);
+    transform: translateY(-1px);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+    width: 56%;
+    opacity: 1;
+}
+
+.nav-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(25,118,210,0.08);
 }
 
 .nav-toggle {
@@ -191,8 +233,8 @@ p {
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.8rem; /* reduce very large hero heading */
+    margin-bottom: 1.2rem;
 }
 
 .hero-text p {

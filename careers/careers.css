@@ -8,6 +8,34 @@ body {
   box-shadow: 0 2px 12px rgba(0,0,0,0.04);
   padding: 2.5rem 2.5rem 2rem 2.5rem;
 }
+
+/* Hero section background: faint/translucent PRL logo centered */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 2.2rem 1.2rem 2.8rem 1.2rem;
+  background: #fff; /* keep hero background white */
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('/assets/PRL_Insights_Logo.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 40%;
+  opacity: 0.06; /* adjust for desired transparency */
+  pointer-events: none;
+  display: block;
+  z-index: 0; /* place behind content */
+}
+
+/* ensure hero content sits above the translucent background */
+.hero .container {
+  position: relative;
+  z-index: 1;
+  background: transparent;
+}
 .careers-header {
   font-size: 2.2rem;
   font-weight: 700;

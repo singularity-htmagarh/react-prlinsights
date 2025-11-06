@@ -11,79 +11,21 @@
       {
         "title": "Software Engineer",
         "type": "Hybrid — Regular Employee",
-        "location": "Miami, Florida, United States",
+        "location": "Canada",
         "applyUrl": "#"
       },
       {
         "title": "Sales Associate",
         "type": "Hybrid — Regular Employee",
-        "location": "New York, New York, United States",
+        "location": "Canada",
         "applyUrl": "#"
       },
       {
         "title": "Project Manager",
         "type": "Hybrid — Regular Employee",
-        "location": "Miami, Florida, United States",
+        "location": "Toronto, Canada",
         "applyUrl": "#"
       }
     ]
-  },
-  {
-    "team": "Customer Engagement Team",
-    "jobs": [
-      {
-        "title": "Consultant, Marketing Science Analytics",
-        "type": "Hybrid — Regular Employee",
-        "location": "New York, New York, United States",
-        "applyUrl": "#"
-      },
-      {
-        "title": "Marketing Science Analyst",
-        "type": "Hybrid — Regular Employee",
-        "location": "Melbourne, Victoria, Australia / Sydney, New South Wales",
-        "applyUrl": "#"
-      },
-      {
-        "title": "Marketing Science Analyst (Start date: January 2026)",
-        "type": "Hybrid — Regular Employee",
-        "location": "Dublin, County Dublin",
-        "applyUrl": "#"
-      },
-      {
-        "title": "Senior Marketing Science Analyst",
-        "type": "Hybrid — Regular Employee",
-        "location": "Denver, Colorado, United States",
-        "applyUrl": "#"
-      },
-      {
-        "title": "Senior Marketing Science Analyst",
-        "type": "Hybrid — Regular Employee",
-        "location": "Miami, Florida, United States",
-        "applyUrl": "#"
-      }
-    ]
-  },
-  {
-    "team": "Finance",
-    "subteam": "Accounting Team",
-    "jobs": [
-      {
-        "title": "Accounting Manager (Private Side)",
-        "type": "Hybrid — Regular Employee",
-        "location": "Miami, Florida, United States",
-        "applyUrl": "#"
-      },
-      {
-        "title": "Accounts Receivable Specialist- Collections",
-        "type": "Hybrid — Regular Employee",
-        "location": "Miami, Florida, United States",
-        "applyUrl": "#"
-      }
-    ]
-  },
-  {
-    "team": "Marketing",
-    "subteam": "Global Marketing Team",
-    "jobs": []
   }
 ]

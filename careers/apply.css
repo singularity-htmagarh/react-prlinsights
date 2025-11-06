@@ -1,0 +1,47 @@
+/* styles for careers apply page */
+.apply-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 2rem;
+  align-items: start;
+}
+.job-details {
+  background: transparent;
+  padding: 1rem 1.2rem;
+}
+.job-details h1 { font-size: 1.8rem; margin-bottom: 0.4rem; }
+.job-meta { color: #666; margin-bottom: 1rem; }
+.job-description p { color: #333; line-height: 1.6; }
+.apply-form .form-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.apply-form h2 { margin-top: 0; margin-bottom: 0.6rem; }
+.apply-form label { display:block; margin-bottom:0.6rem; font-size:0.95rem; }
+.apply-form input[type="text"],
+.apply-form input[type="email"],
+.apply-form input[type="tel"],
+.apply-form select,
+.apply-form textarea {
+  width:100%;
+  padding:0.55rem 0.6rem;
+  border:1px solid #e6e6e6;
+  border-radius:4px;
+  box-sizing:border-box;
+  margin-top:0.25rem;
+}
+.apply-submit {
+  margin-top:0.6rem;
+  background:#1976d2;
+  color:#fff;
+  border:none;
+  padding:0.6rem 0.9rem;
+  border-radius:4px;
+  cursor:pointer;
+}
+.apply-result { margin-top:0.6rem; color:#145; font-weight:600; }
+@media (max-width:900px) {
+  .apply-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Apply - PRL Insights & Partners</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="stylesheet" href="apply.css">
+</head>
+<body>
+  <script src="../assets/navbar.js"></script>
+
+  <main class="apply-main" style="max-width:1100px;margin:2.5rem auto;">
+    <div class="apply-grid">
+      <section class="job-details">
+        <h1 id="job-title">Job Title</h1>
+        <div id="job-meta" class="job-meta">Type &mdash; Location</div>
+        <div id="job-description" class="job-description">
+          <p>Loading job description...</p>
+        </div>
+      </section>
+
+      <aside class="apply-form">
+        <div class="form-card">
+          <h2>Apply Now</h2>
+          <form id="applicationForm">
+            <label>Full name
+              <input type="text" name="name" id="app-name" required />
+            </label>
+            <label>Email
+              <input type="email" name="email" id="app-email" required />
+            </label>
+            <label>Phone
+              <input type="tel" name="phone" id="app-phone" />
+            </label>
+
+            <label>Are you authorized to work in the country of this role?
+              <select id="app-authorized" name="authorized">
+                <option value="">Select</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+              </select>
+            </label>
+
+            <label>Years of relevant experience
+              <select id="app-experience" name="experience">
+                <option value="0-1">0-1</option>
+                <option value="2-4">2-4</option>
+                <option value="5-7">5-7</option>
+                <option value="8+">8+</option>
+              </select>
+            </label>
+
+            <label>Pre-screen questions / Notes
+              <textarea id="app-notes" name="notes" rows="4" placeholder="Why are you a good fit? Any relevant links (GitHub, portfolio)..."></textarea>
+            </label>
+
+            <label>Upload resume (PDF)
+              <input type="file" id="app-resume" name="resume" accept="application/pdf" />
+            </label>
+
+            <button type="submit" class="apply-submit">Submit application</button>
+            <div id="applyResult" class="apply-result" aria-live="polite"></div>
+          </form>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script>
+    // read query params
+    function qs(key) {
+      var params = new URLSearchParams(window.location.search);
+      return params.get(key) || '';
+    }
+    var title = decodeURIComponent(qs('title')) || 'Job Title';
+    var team = decodeURIComponent(qs('team')) || '';
+    var location = decodeURIComponent(qs('location')) || '';
+    var type = decodeURIComponent(qs('type')) || '';
+
+    document.getElementById('job-title').textContent = title;
+    document.getElementById('job-meta').innerHTML = (type ? type : 'Role') + ' &mdash; ' + (location || 'Location');
+
+    // simple placeholder descriptions based on title (can be extended)
+    var descriptions = {
+      'Strategic Partner - Director': '<p>The Strategic Partner - Director will lead partnership strategy, cultivate relationships with strategic partners, and drive revenue growth through alliances.</p><ul><li>Build & manage partner relationships</li><li>Define joint GTM strategies</li><li>Own partnership P&L metrics</li></ul>',
+      'Software Engineer': '<p>The Software Engineer will design, build, and maintain web applications and services. Strong JS/React/node skills are preferred.</p><ul><li>Develop features end-to-end</li><li>Write tests and documentation</li><li>Collaborate with product and design</li></ul>',
+      'Sales Associate': '<p>Sales Associate will support sales outreach, pipeline generation, and account coordination to grow business.</p><ul><li>Prospect and qualify leads</li><li>Support demos and RFPs</li><li>Coordinate with marketing</li></ul>',
+      'Project Manager': '<p>The Project Manager will oversee project delivery, timelines, and cross-functional coordination to ensure client success.</p><ul><li>Manage schedules and risks</li><li>Communicate with stakeholders</li><li>Track project health</li></ul>'
+    };
+
+    document.getElementById('job-description').innerHTML = descriptions[title] || '<p>We are looking for talented individuals. Please provide your details on the right to apply.</p>';
+
+    // handle form submit (no backend) - show a summary and prevent default
+    document.getElementById('applicationForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('app-name').value.trim();
+      var email = document.getElementById('app-email').value.trim();
+      var phone = document.getElementById('app-phone').value.trim();
+      var auth = document.getElementById('app-authorized').value;
+      var exp = document.getElementById('app-experience').value;
+      var notes = document.getElementById('app-notes').value.trim();
+      var resume = document.getElementById('app-resume').files[0];
+
+      if (!name || !email) {
+        document.getElementById('applyResult').textContent = 'Please enter your name and email.';
+        return;
+      }
+
+      // Simple client-side confirmation
+      var msg = 'Thanks ' + name + '! Your application for "' + title + '" has been received.';
+      if (resume) msg += ' (Resume: ' + resume.name + ')';
+      msg += ' We will review your application and contact you via email.';
+      document.getElementById('applyResult').textContent = msg;
+      // Optionally clear form or disable
+      document.getElementById('applicationForm').reset();
+    });
+  </script>
+
+</body>
+</html>
