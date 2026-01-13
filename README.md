@@ -33,4 +33,17 @@ pip install -r requirements.txt
 python etf_scraper.py --category all --output etfs.csv
 ```
 
-For detailed documentation, see [scripts/README.md](scripts/README.md) or [scripts/QUICKSTART.md](scripts/QUICKSTART.md).
+### Documentation
+
+- 📖 **[Getting Started](scripts/INDEX.md)** - Documentation index and navigation guide
+- ⚡ **[Quick Start](scripts/QUICKSTART.md)** - Get running in 5 minutes
+- 🎯 **[Approach Guide](scripts/APPROACH_GUIDE.md)** - Best practices and strategies
+- 📚 **[Complete Reference](scripts/README.md)** - Full documentation
+
+### What Can It Do?
+
+- Download ETFs by category (sector, region, asset class, etc.)
+- Export to CSV or JSON formats
+- Handle pagination and multiple categories
+- Respectful rate limiting with retry logic
+- Comprehensive error handling
