@@ -20,3 +20,17 @@ You can edit the HTML and CSS files directly. No build step is required.
 ## Deployment
 
 The site is deployed via GitHub Pages from the `main` branch. All navigation and links use folder-based URLs for a modern, clean look.
+
+## ETF Data Scraper
+
+This repository includes a Python-based tool for downloading ETF data from etfdb.com. The scraper allows you to download ETF information organized by various categories such as sector, region, asset class, and more.
+
+### Quick Start
+
+```bash
+cd scripts
+pip install -r requirements.txt
+python etf_scraper.py --category all --output etfs.csv
+```
+
+For detailed documentation, see [scripts/README.md](scripts/README.md) or [scripts/QUICKSTART.md](scripts/QUICKSTART.md).
