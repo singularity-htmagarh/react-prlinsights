@@ -4,3 +4,12 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# ETF Scraper outputs
+scripts/example_*.csv
+scripts/example_*.json
+scripts/etf_*.csv
+scripts/etf_*.json
+scripts/etf_data/
+scripts/__pycache__/
+*.pyc
