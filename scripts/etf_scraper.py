@@ -65,7 +65,7 @@ class ETFScraper:
         self.max_pages = max_pages
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         })
         
     def get_page(self, url: str) -> Optional[BeautifulSoup]:
@@ -182,6 +182,11 @@ class ETFScraper:
         """
         Scrape additional pages if pagination exists.
         
+        NOTE: This is a simplified pagination implementation that may not work for all
+        ETFDB.com pages. The actual pagination scheme may vary by page type. If you're
+        not getting complete results, try increasing --max-pages or downloading specific
+        categories separately.
+        
         Args:
             initial_soup: BeautifulSoup object of the first page
             base_url: Base URL for pagination
@@ -191,8 +196,8 @@ class ETFScraper:
         """
         all_etfs = []
         
-        # This is a simplified pagination handler
-        # Real implementation would need to handle ETFDB's specific pagination
+        # This is a simplified pagination handler using common ?page=N pattern
+        # ETFDB.com may use different pagination schemes (AJAX, infinite scroll, etc.)
         page_num = 2
         
         while page_num <= self.max_pages:
