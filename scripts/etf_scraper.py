@@ -20,7 +20,7 @@ import os
 import sys
 import time
 from typing import List, Dict, Any, Optional
-from urllib.parse import urljoin, urlparse, parse_qs
+from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
@@ -51,16 +51,18 @@ class ETFScraper:
         "currency": "/etfs/#currency",
     }
     
-    def __init__(self, delay: float = 1.0, max_retries: int = 3):
+    def __init__(self, delay: float = 1.0, max_retries: int = 3, max_pages: int = 10):
         """
         Initialize the ETF scraper.
         
         Args:
             delay: Delay between requests in seconds (default: 1.0)
             max_retries: Maximum number of retries for failed requests (default: 3)
+            max_pages: Maximum number of pages to scrape per category (default: 10)
         """
         self.delay = delay
         self.max_retries = max_retries
+        self.max_pages = max_pages
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
@@ -189,15 +191,11 @@ class ETFScraper:
         """
         all_etfs = []
         
-        # Look for pagination links
-        pagination = initial_soup.find_all('a', class_=['page-link', 'next', 'pagination'])
-        
         # This is a simplified pagination handler
         # Real implementation would need to handle ETFDB's specific pagination
         page_num = 2
-        max_pages = 10  # Safety limit
         
-        while page_num <= max_pages:
+        while page_num <= self.max_pages:
             # Try common pagination patterns
             next_url = f"{base_url}?page={page_num}"
             
@@ -337,6 +335,13 @@ Available categories:
     )
     
     parser.add_argument(
+        '--max-pages',
+        type=int,
+        default=10,
+        help='Maximum number of pages to scrape per category (default: 10)'
+    )
+    
+    parser.add_argument(
         '--verbose',
         action='store_true',
         help='Enable verbose logging'
@@ -352,7 +357,7 @@ Available categories:
         os.makedirs(args.output_dir, exist_ok=True)
     
     # Initialize scraper
-    scraper = ETFScraper(delay=args.delay)
+    scraper = ETFScraper(delay=args.delay, max_pages=args.max_pages)
     
     try:
         if args.all_categories:
